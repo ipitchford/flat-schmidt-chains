@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0",
+  "recordBoundary": "Retrospective publication intake, not prospective discovery registration.",
+  "contributionMap": [
+    {
+      "unit": "statement",
+      "claim": "Complete flat-Schmidt-rank-two open-chain dichotomy",
+      "paperLocation": "Sections 2–4",
+      "closestPriorWork": "Bravyi–Gosset qubit classification; known overlap methods. Full restricted-class classification not located in bounded search.",
+      "verdict": "partially-known-cited",
+      "searches": [
+        {
+          "date": "2026-09-28",
+          "query": "\"flat Schmidt\" \"spectral gap\" classification; \"Schmidt-rank-two\" chains classification spectral gap",
+          "corpus": "Bounded web search and primary arXiv full-text theorem/proof passages"
+        }
+      ]
+    },
+    {
+      "unit": "object",
+      "claim": "Complete qutrit short-spectrum fibre and persistent ground-space dimension",
+      "paperLocation": "Section 5",
+      "closestPriorWork": "Weaker local-isospectral comparisons already follow from qubit predecessors; fibre completeness is the candidate addition.",
+      "verdict": "partially-known-cited",
+      "searches": [
+        {
+          "date": "2026-09-28",
+          "query": "\"flat Schmidt\" \"spectral gap\" classification; \"Schmidt-rank-two\" chains classification spectral gap",
+          "corpus": "Bounded web search and primary arXiv full-text theorem/proof passages"
+        }
+      ]
+    },
+    {
+      "unit": "method",
+      "claim": "Ground-space recurrence, unbiased hopping gap and range-Gram saturation",
+      "paperLocation": "Sections 3–5 and Appendix A",
+      "closestPriorWork": "Movassagh et al. equation (11); Motzkin paper Step 1 before equation (6); established finite-size methods.",
+      "verdict": "known-cited",
+      "searches": [
+        {
+          "date": "2026-09-28",
+          "query": "\"flat Schmidt\" \"spectral gap\" classification; \"Schmidt-rank-two\" chains classification spectral gap",
+          "corpus": "Bounded web search and primary arXiv full-text theorem/proof passages"
+        }
+      ]
+    }
+  ],
+  "sourcesReadInFull": [
+    {
+      "citation": "Movassagh et al., arXiv:1001.1006",
+      "usedFor": "Ground-space recurrence antecedent",
+      "readWhat": "Relevant full-text Section II derivation and equation (11), not independent reconstruction of the whole paper",
+      "date": "2026-09-28",
+      "evidenceLocator": "CITATION_AUDIT.md"
+    },
+    {
+      "citation": "Bravyi et al., arXiv:1203.5801v2",
+      "usedFor": "Unbiased hopping antecedent and boundary comparison",
+      "readWhat": "Relevant full-text Step 1 and passage before equation (6)",
+      "date": "2026-09-28",
+      "evidenceLocator": "CITATION_AUDIT.md"
+    }
+  ],
+  "limitationTriage": [
+    {
+      "limitation": "Symbolic-family classifier can miss exceptional parameters",
+      "closingQuestion": "Can domain restriction safely close this implementation bug?",
+      "triedOrSearched": "Reject free symbols; test both specializations; guard-removal mutation fails under normal and optimized Python.",
+      "estimatedCost": "Bounded repair",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Antecedent locators and full Gram basis insufficiently explicit",
+      "closingQuestion": "Can bounded exposition repairs expose the existing argument?",
+      "triedOrSearched": "Added source locators, named lemma and full basis appendix without changing theorem statements.",
+      "estimatedCost": "Bounded repair",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Unequal Schmidt data, periodic/GNS gaps and general rank-two projectors",
+      "closingQuestion": "Do existing hypotheses cover these extensions?",
+      "triedOrSearched": "No; scope read against exact statements.",
+      "estimatedCost": "Separate research/assurance programme",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Not implied by this proof; separate research.",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Formal proof, unaffiliated review, novelty and impact",
+      "closingQuestion": "Does supplied code or replay establish these?",
+      "triedOrSearched": "No; provenance and evidence dimensions kept separate.",
+      "estimatedCost": "Separate research/assurance programme",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Not established by current evidence.",
+      "whyNotClosedNow": ""
+    }
+  ],
+  "extensionScout": {
+    "by": "Codex publication intake",
+    "date": "2026-09-28",
+    "proposals": [
+      "Repair executable domain and clarify existing all-parameter argument"
+    ],
+    "actions": [
+      "Implemented requested bounded revisions",
+      "No optional new theorem programme undertaken"
+    ]
+  }
+}
