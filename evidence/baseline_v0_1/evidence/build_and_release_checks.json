@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "pdf_pages": 11,
+  "latex_overfull_boxes": 0,
+  "latex_unresolved_references": 0,
+  "pdf_rendered_pages": 11,
+  "visual_checks": "All-page contact sheet; full-size inspection of certificate, coupling, and final evidence/reference pages.",
+  "exact_checks": "27 exact groups PASS",
+  "sector_diagnostic": "9840 words through N=8 PASS",
+  "numerical_diagnostic": "35 cases through N=6 PASS",
+  "review_scope": "Internal development checks only; no independent external referee or proof-assistant validation."
+}

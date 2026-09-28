@@ -1,0 +1,2 @@
+PASS gapless H3= x**4*(16*x**2 - 40*x + 23)*(16*x**2 - 24*x + 7)/256 T eigenvalue modulus squares= [1/4, 1/4]
+PASS gapped H3= x**4*(16*x**2 - 40*x + 23)*(16*x**2 - 24*x + 7)/256 T eigenvalue modulus squares= [sqrt(5)/8 + 3/8, 3/8 - sqrt(5)/8]

@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "version": "1.0",
+  "date": "2026-09-28",
+  "scope": "Release/build/reproduction checks; not formal proof or external peer review.",
+  "complete_reproduction_exit_code": 0,
+  "checks": {
+    "exact": {
+      "status": "PASS",
+      "check_groups": 43,
+      "exact_PSD_certificates": 7,
+      "python": "3.13.5",
+      "sympy": "1.14.0"
+    },
+    "classifier": {
+      "status": "PASS",
+      "classifier_cases": 11,
+      "input_rejections": 3
+    },
+    "numerical": {
+      "status": "PASS",
+      "full_Hamiltonian_cases": 146,
+      "complex_four_site_cases": 24,
+      "seed": 20260928,
+      "zero_threshold": 1e-09,
+      "assertion_tolerance": 2e-09,
+      "python": "3.13.5",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "legacy_reruns": {
+      "status": "PASS",
+      "programmes_passed": 5
+    }
+  },
+  "archives": [
+    {
+      "directory": "evidence/baseline_v0_1",
+      "entries_verified": 19,
+      "status": "PASS"
+    },
+    {
+      "directory": "review/supplied_referee_checks",
+      "entries_verified": 17,
+      "status": "PASS"
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "paper/flat_schmidt_chains.pdf",
+      "pages": 18,
+      "all_pages_rendered": true,
+      "layout_review": "All-page contact sheets, with full-resolution inspection of selected proof/table pages and release text. No clipping, overlaps or broken mathematical glyphs observed.",
+      "out_of_page_text_spans": 0,
+      "undefined_reference_markers": 0
+    },
+    {
+      "file": "release/EVIDENCE_PRESS_CANDIDATE.pdf",
+      "pages": 3,
+      "all_pages_rendered": true,
+      "layout_review": "All-page contact sheets, with full-resolution inspection of selected proof/table pages and release text. No clipping, overlaps or broken mathematical glyphs observed.",
+      "out_of_page_text_spans": 0,
+      "undefined_reference_markers": 0
+    }
+  ],
+  "manuscript_TeX_warnings_or_overfull_boxes": []
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "Exact finite comparison; thermodynamic conclusions invoke BG Theorem 1, not numerical extrapolation.",
+  "source": "https://arxiv.org/abs/1503.04035",
+  "states": [
+    {
+      "label": "gapless",
+      "normalised_vector": [
+        "sqrt(2)/2",
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "schmidt_probabilities": [
+        "(2+sqrt(3))/4",
+        "(2-sqrt(3))/4"
+      ],
+      "overlap_singular_values": [
+        "(sqrt(2)+1)/4",
+        "(sqrt(2)-1)/4"
+      ],
+      "H3_characteristic_polynomial": "x**4*(16*x**2 - 40*x + 23)*(16*x**2 - 24*x + 7)/256",
+      "BG_transfer_eigenvalue_abs_squared": [
+        "1/4",
+        "1/4"
+      ]
+    },
+    {
+      "label": "gapped",
+      "normalised_vector": [
+        "1/2",
+        "1/4 + sqrt(5)/4",
+        "I*(-1 + sqrt(5))/4",
+        "0"
+      ],
+      "schmidt_probabilities": [
+        "(2+sqrt(3))/4",
+        "(2-sqrt(3))/4"
+      ],
+      "overlap_singular_values": [
+        "(sqrt(2)+1)/4",
+        "(sqrt(2)-1)/4"
+      ],
+      "H3_characteristic_polynomial": "x**4*(16*x**2 - 40*x + 23)*(16*x**2 - 24*x + 7)/256",
+      "BG_transfer_eigenvalue_abs_squared": [
+        "sqrt(5)/8 + 3/8",
+        "3/8 - sqrt(5)/8"
+      ]
+    }
+  ],
+  "qualification": "Does not duplicate the manuscripts flat Schmidt probabilities (1/2,1/2,0) or its exact three-site spectrum."
+}

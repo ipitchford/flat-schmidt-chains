@@ -1,0 +1,2 @@
+PASS: 20 full Hamiltonians, 18 complex-perturbation chains, 50 hard-core systems, 24 exact Rayleigh trials.
+{"python": "3.13.5", "numpy": "2.3.5", "scipy": "1.17.0"}

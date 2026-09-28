@@ -1,0 +1,516 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Locally isospectral qutrit chains with different spectral-gap phases},pdfauthor={Evidence Press research manuscript candidate},pdfsubject={Rank-one and rank-two frustration-free qutrit chains; unrefereed AI-assisted candidate},pdfkeywords={qutrit, spectral gap, frustration free, finite-size certificate, locally isospectral}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Locally isospectral qutrit chains}
+\fancyhead[R]{\small Evidence Press \textbar\ v0.1}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\gap}{\operatorname{gap}}
+\newcommand{\Pd}{P_{\mathrm d}}
+\newcommand{\Pm}{P_{\mathrm m}}
+\title{\textbf{Locally isospectral qutrit chains\\with different spectral-gap phases}\\[5pt]
+\large Exact rank-one families, a rational gapped neighborhood,\\and rank-two exponential bottlenecks}
+\author{Evidence Press research manuscript candidate}
+\date{28 September 2026 \quad Version 0.1}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give deterministic results for open, translation-invariant, nearest-neighbor qutrit chains with local projectors of rank one or two. The rank-one interactions defined by $(\ket{00}-\ket{12})/\sqrt2$ and $(\ket{01}-\ket{12})/\sqrt2$ have the same two-site spectrum, the same three-site spectrum, and the same Schmidt coefficients, but different gap behavior. The first has a uniform gap at least $1/4$; the second has exact finite-chain gap $1-\cos(\pi/N)$. Both belong to a continuous family on which all these local spectral data remain fixed. We prove the gapped statement by a monomer--dimer decomposition and a self-contained heat-bath comparison. Independently, an exact rational four-site certificate gives a gapped operator-norm neighborhood of the first interaction, with gap at least $1/20$ in a rank-one projector ball of radius $1/90$. This includes an explicit full-Schmidt-rank state that fails the elementary three-site gap test. For rank-two interactions describing two noninterchanging particle species, opposing biases produce exponentially small gaps even though each rank-one constituent chain is uniformly gapped. All infinite-size conclusions follow from analytic proofs; a companion verifier checks the finite algebraic certificates with exact arithmetic. These results provide a partial map and an obstruction to classification from short-chain spectra, not a classification of arbitrary rank-one or rank-two qutrit interactions.
+\end{abstract}
+\noindent\textbf{Status.} AI-assisted, unrefereed research candidate. The mathematical arguments and exact finite checks are supplied for independent review. Historical priority of the constructions and their combination is not established by the targeted literature search. No institutional authorship, external referee endorsement, formal proof-assistant verification, or full solution of the qutrit classification problem is claimed.
+
+\section{Scope, conventions, and prior work}
+Let $P$ be an orthogonal projector on $\C^3\otimes\C^3$, and set
+\begin{equation}\label{eq:HN}
+ H_N(P)=\sum_{i=1}^{N-1}P_{i,i+1},\qquad
+ \gamma_N(P)=\min\bigl(\spec H_N(P)\setminus\{0\}\bigr),\qquad N\ge2.
+\end{equation}
+There are \emph{open boundaries and no added boundary terms}. Translation invariance means the same ordered two-site interaction on every bond. All gaps are measured in the normalization $P^2=P$; rescaling the local interaction rescales the gap. We call the family uniformly gapped when $\inf_{N\ge2}\gamma_N(P)>0$. Our gapless constructions have $\gamma_N\to0$, not merely a small gap at selected numerical sizes.
+
+Bravyi and Gosset classified the qubit problem and explicitly proposed qutrit local projectors of rank one and two as a next case \cite{BG}. Existing methods already give deterministic sufficient conditions: Lemm's Theorem 5 is a three-site overlap criterion, and the same paper states deterministic neighborhoods of orthogonal product constraints \cite{Lemm}. Thus it would be incorrect to describe deterministic qutrit gap certification itself as new. Hunter-Jones and Lemm extend low-rank gap arguments to bounded-degree graphs \cite{HJL}. The semidefinite hierarchy of Rai et al. includes finite-size methods and can improve their certificates \cite{Rai}. We use elementary instances of the finite-size approach and rational positive-semidefinite identities, not a newly implemented SDP hierarchy.
+
+Our candidate contributions are the locally isospectral separation, the exact marker family and dimer comparison assembled into that separation, the explicit four-site-certified neighborhood beyond the three-site test, and the opposing-bias rank-two construction. These are proved below. A targeted search is not an exhaustive priority determination, especially for the component connections with quantum clocks, rewriting Hamiltonians, and classical heat-bath dynamics.
+
+\begin{lemma}[Automatic frustration freeness]\label{lem:ff}
+If $\rank P<3$, every open chain in \eqref{eq:HN} has a nonzero product vector in its kernel.
+\end{lemma}
+\begin{proof}
+Write the range of $P$ as the span of $r<3$ forbidden vectors. Choose any nonzero first-site vector $x_1$. Having chosen $x_i$, the equations that $x_i\otimes x_{i+1}$ be orthogonal to all forbidden vectors impose at most $r$ homogeneous linear constraints on $x_{i+1}\in\C^3$. Choose a nonzero solution and continue. The resulting product is killed by every term. This argument also works for nonidentical projectors of rank below three on successive bonds.
+\end{proof}
+
+\section{Principal results}
+Define
+\begin{equation}\label{eq:pair}
+ \psi_{\mathrm d}=\frac{\ket{00}-\ket{12}}{\sqrt2},\qquad
+ \psi_{\mathrm m}=\frac{\ket{01}-\ket{12}}{\sqrt2},\qquad
+ P_{\mathrm d,\mathrm m}=\ket{\psi_{\mathrm d,\mathrm m}}\bra{\psi_{\mathrm d,\mathrm m}}.
+\end{equation}
+\begin{theorem}[Local spectra do not determine the gap phase]\label{thm:main}
+The projectors in \eqref{eq:pair} have Schmidt probabilities $(1/2,1/2,0)$ and identical two-site and three-site spectra:
+\begin{align}
+ \spec H_2&=\{0^{(8)},1^{(1)}\},\label{eq:h2spec}\\
+ \spec H_3&=\{0^{(21)},(1/2)^{(1)},1^{(4)},(3/2)^{(1)}\}.\label{eq:h3spec}
+\end{align}
+Here superscripts denote multiplicities. Nevertheless, for every $N\ge2$,
+\begin{equation}\label{eq:mainbounds}
+ \gamma_N(\Pd)\ge\frac14,
+ \qquad
+ \gamma_N(\Pm)=1-\cos\frac\pi N.
+\end{equation}
+Consequently no necessary-and-sufficient rule whose input consists only of these two short-chain spectra, even supplemented by the Schmidt probabilities, can classify all rank-one qutrit chains as gapped or gapless.
+\end{theorem}
+The word ``only'' in the last statement is essential. This is not a no-go theorem for methods using the local matrices, longer chains, their eigenvectors, or an unbounded hierarchy of finite-size tests.
+
+\begin{theorem}[Certified open region]\label{thm:ball}
+For every rank-one orthogonal projector $Q$ with
+$\epsilon=\norm{Q-\Pd}<1/45$, one has
+\begin{equation}\label{eq:ball}
+ \inf_{N\ge2}\gamma_N(Q)\ge\frac1{10}-\frac92\epsilon>0.
+\end{equation}
+In particular the closed radius-$1/90$ ball has gap at least $1/20$.
+The full-Schmidt-rank vector
+\begin{equation}\label{eq:star}
+ \psi_* =\frac{101\ket{00}-100\ket{12}+\ket{21}}{\sqrt{20202}}
+\end{equation}
+satisfies this bound, although its three-site gap is strictly below $1/2$.
+\end{theorem}
+This is a neighborhood in the full complex rank-one projector space, not a neighborhood confined to a chosen real slice. The local projector rank remains one; the vector's Schmidt rank is a different notion.
+
+\begin{theorem}[Exponential closing from opposing species]\label{thm:ranktwo-main}
+For $0<a<1<b$, let
+\begin{equation}\label{eq:ranktwo}
+ \phi_1=\frac{\ket{10}-a\ket{01}}{\sqrt{1+a^2}},\qquad
+ \phi_2=\frac{\ket{20}-b\ket{02}}{\sqrt{1+b^2}},\qquad
+ P(a,b)=\sum_{s=1}^2\ket{\phi_s}\bra{\phi_s}.
+\end{equation}
+The two vectors are orthonormal, so $P(a,b)$ is a rank-two projector. Put
+$A=-\log a$ and $B=\log b$. For all sufficiently large $N$,
+\begin{equation}\label{eq:ranktwo-exp}
+ \gamma_N(P(a,b))\le
+ \frac{1+(b/a)^2}{1+a^2}
+ \exp\left[-\frac{2AB}{A+B}(N-1)\right].
+\end{equation}
+Each chain with only one of the two rank-one constituents is uniformly gapped, with gap infimum $1-2q/(1+q^2)>0$, where $q=a$ or $q=b$.
+For the rational projectors defined by
+\begin{equation}\label{eq:rational-two}
+ \phi_1=\frac{2\ket{10}-\ket{01}}{\sqrt5},\qquad
+ \phi_2=\frac{\ket{20}-2\ket{02}}{\sqrt5},
+\end{equation}
+one has the sharper simple bound
+\begin{equation}\label{eq:rational-exp}
+ \gamma_{2L+1}\le\frac85\,4^{-L}\qquad(L\ge1),
+\end{equation}
+whereas both constituent families have gap infimum $1/5$.
+\end{theorem}
+All three theorems will be proved without numerical extrapolation.
+
+\section{Overlap bounds and an exactly solvable marker family}
+The following is the standard adjacent-projection strategy, retaining a finite-path cosine factor. We include the proof and make no claim that this general gap method is new; compare \cite{Lemm,HJL}.
+\begin{lemma}[Finite-path overlap bound]\label{lem:overlap}
+Let $P$ be a two-site projector and let $c=\norm{P_{12}P_{23}}$. Whenever the right-hand side is positive,
+\begin{equation}\label{eq:pathbound}
+ \gamma_N(P)\ge1-2c\cos(\pi/N).
+\end{equation}
+For $P=\ket\psi\bra\psi$, write $\psi=\sum_{i,j}M_{ij}\ket{ij}$ with $\norm M_F=1$. Then
+\begin{equation}\label{eq:contraction}
+ c=\norm{\overline M M}=\norm{M\overline M}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $p_i=P_{i,i+1}$ and $z_i=\norm{p_i x}$ for an arbitrary vector $x$. Disjoint projections commute, hence have nonnegative anticommutator. For adjacent terms, the norm of their product bounds the angle between their ranges, giving
+\[
+ \langle x,H_N^2x\rangle\ge\sum_{i=1}^{N-1}z_i^2
+       -2c\sum_{i=1}^{N-2}z_i z_{i+1}.
+\]
+The largest eigenvalue of the adjacency matrix of the $(N-1)$-vertex path is $2\cos(\pi/N)$. Thus $H_N^2\ge(1-2c\cos(\pi/N))H_N$, which implies \eqref{eq:pathbound} by the spectral theorem.
+
+For \eqref{eq:contraction}, use the isometries $Vx=\psi\otimes x$ and $Wy=y\otimes\psi$ into three sites. Their overlap has entries
+$(V^*W)_{c,a}=\sum_b\overline{M_{ab}}M_{bc}$, so
+$V^*W=(\overline M M)^T$. As $P_{12}P_{23}=V(V^*W)W^*$, its norm is the norm of this $3\times3$ overlap matrix. Complex conjugation gives the second equality.
+\end{proof}
+The readily computable region $\norm{\overline M M}<1/2$ therefore has a uniform gap. It is sufficient, not necessary. Even the largest Schmidt probability being below $1/2$ is sufficient, since $\norm{\overline M M}\le\norm M^2$, but Theorem~\ref{thm:main} shows the limits of entanglement-only information.
+
+\begin{theorem}[Exact marker family]\label{thm:marker}
+Let $u,v,w$ be unit vectors with $w\perp u,v$. The overlap $\langle u,v\rangle$ is arbitrary. For $a,b\ge0$ with $a^2+b^2=1$, set
+\begin{equation}\label{eq:marker-family}
+ \psi=a\ket{u,w}-b\ket{w,v}.
+\end{equation}
+Then for all $N\ge2$,
+\begin{equation}\label{eq:marker-exact}
+ \gamma_N(\ket\psi\bra\psi)=1-2ab\cos(\pi/N).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Choose coordinates with $w$ a real basis vector. The coefficient matrix is
+$M=a u w^T-b w v^T$, so
+\[
+ M\overline M=-ab\bigl(u v^*+\langle u,v\rangle w w^*\bigr).
+\]
+The two displayed summands have orthogonal domain and range supports; the first has norm one and the second norm at most one. Hence $c=ab$, and Lemma~\ref{lem:overlap} gives the lower bound.
+
+For the matching upper bound, consider the $N$ orthonormal vectors
+\[
+ e_j=u^{\otimes(j-1)}\otimes w\otimes v^{\otimes(N-j)},\quad 1\le j\le N.
+\]
+They are orthogonal because the unique $w$ occurs at different sites, regardless of $\langle u,v\rangle$. Their span is reducing: away from the marker, every bond is orthogonal to the forbidden vector, while a bond adjoining it moves the marker by one site. The restricted Hamiltonian is $D^*D$, where row $j$ of $D$ has entries $-b$ at column $j$ and $a$ at column $j+1$. The matrix $DD^*$ has diagonal one and off-diagonal entries $-ab$. Its eigenvalues are
+$1-2ab\cos(k\pi/N)$, $1\le k\le N-1$. The least of these attains the lower bound. The cases $ab=0$ also follow directly.
+\end{proof}
+When $u,v$ are independent and $ab>0$, their union with $w$ spans three local dimensions. Thus the statement includes genuinely qutrit forbidden states, not only a qubit interaction with an unused level. Taking $u=\ket0$, $w=\ket1$, $v=\ket2$, $a=b=1/\sqrt2$ proves the marker part of \eqref{eq:mainbounds}.
+
+\section{The dimer family is uniformly gapped}\label{sec:dimer}
+\begin{theorem}[All positive dimer weights]\label{thm:dimer}
+For $a,b>0$, $a^2+b^2=1$, and
+\begin{equation}\label{eq:dimer-family}
+ \psi=a\ket{00}-b\ket{12},
+\end{equation}
+one has $\gamma_N(\ket\psi\bra\psi)\ge b^4$ for every $N\ge2$.
+At either endpoint $a=0$ or $b=0$ the commuting-projector chain has gap one.
+\end{theorem}
+
+\subsection{Reducing sectors as hard-core configurations}
+The only off-diagonal move is $00\leftrightarrow12$. Any symbol $1$ or $2$ not belonging to an adjacent $12$ pair is fixed under all moves: no move can act on it or produce a new $12$ pair across it. These frozen symbols split the chain into intervals. Each remaining interval is tiled by monomers $0$ and oriented dimers $12$. All such tilings of the interval lie in one connected component: delete all dimers and then insert the desired ones. Conversely no move leaves this component.
+
+On an interval of $\ell$ physical sites, a tiling is an independent set $\eta$ on the path of $m=\ell-1$ possible dimer edges. Dimers cannot occupy adjacent edges. The positive ground amplitude is
+\[
+ g(\eta)=\left(\frac ab\right)^{|\eta|}.
+\]
+Conjugating the sector Hamiltonian by $G=\diag g$ gives the positive generator $\mathcal L=G^{-1}H G$ with insertion rate $p=a^2$ and deletion rate $d=b^2$. These are exactly rate-one single-site heat-bath updates for the hard-core law
+\[
+ \pi(\eta)=Z^{-1}\lambda^{|\eta|},\qquad \lambda=a^2/b^2,
+ \qquad p=\lambda/(1+\lambda),\quad d=1/(1+\lambda).
+\]
+Insertion is allowed only when the neighboring hard-core sites are empty. In particular $\mathcal L$ is reversible in $L^2(\pi)$ and has the same spectrum as the quantum sector Hamiltonian. The full chain is a direct sum of tensor sums of these interval Hamiltonians and zero one-dimensional sectors. It remains to bound every finite hard-core path uniformly, including arbitrary fugacity.
+
+\subsection{A two-site heat-bath comparison}
+\begin{lemma}[Hard-core path bound]\label{lem:hardcore}
+For every path length $m\ge1$ and every fugacity $\lambda>0$, the rate-one single-site heat-bath generator satisfies
+\begin{equation}\label{eq:hardcore-gap}
+ \gap(\mathcal L)\ge(1+\lambda)^{-2}=d^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $E_i$ denote conditional expectation resampling site $i$, so
+$\mathcal L=\sum_i(I-E_i)$. Consider the block heat-bath generator
+\[
+ \mathcal B=(I-E_{\{1\}})+\sum_{i=1}^{m-1}(I-E_{\{i,i+1\}})
+                 +(I-E_{\{m\}}).
+\]
+For $m=1$, retain both copies of the singleton. Every site belongs to exactly two blocks.
+
+First we show $\gap(\mathcal B)\ge2d$. Equip independent sets with Hamming distance. This distance is geodesic for single-site admissible changes: remove the occupations absent from the target and then add its missing occupations. Consider two configurations differing only at site $j$. Each of the two blocks containing $j$ has identical outside conditions for the two configurations and can be resampled identically, eliminating the discrepancy. At most two other blocks can feel the changed boundary site. Each creates expected additional Hamming distance at most $p$ under a suitable coupling.
+
+Here is the complete nontrivial two-site coupling calculation. With neither site blocked, the conditional weights of $00,10,01$ are $1,\lambda,\lambda$. If the exterior discrepancy blocks the first site, the other conditional weights are $1,\lambda$ on $00,01$. Couple the common mass at $00$ and $01$ identically. The remaining mass comes from $10$: send
+\[
+ \frac{\lambda}{(1+\lambda)(1+2\lambda)}\ \text{to }00,
+ \qquad
+ \frac{\lambda^2}{(1+\lambda)(1+2\lambda)}\ \text{to }01.
+\]
+The transport distances are one and two, so the expected new distance is
+$\lambda/(1+\lambda)=p$. If the other site is blocked by the unchanged exterior condition, the calculation is a single Bernoulli update, again costing at most $p$. Singleton blocks have the same bound.
+
+Synchronizing the rate-one clocks therefore gives infinitesimal expected-distance drift at most $-2+2p=-2d$ for neighboring configurations. Concatenating the couplings along geodesics extends this bound to arbitrary configurations, and iteration gives contraction by $e^{-2dt}$ for the block semigroup in the Hamming Wasserstein distance. Equivalently it contracts the Lipschitz seminorm of functions by this factor. Every nonconstant eigenfunction has nonzero finite Lipschitz seminorm; applying the contraction to an eigenfunction proves that every nonzero eigenvalue of $\mathcal B$ is at least $2d$.
+
+Next compare block and single-site Dirichlet forms. Conditional on the exterior of a free pair, the positive generator $\mathcal L_i+\mathcal L_{i+1}$ on $00,10,01$ is
+\[
+ \begin{pmatrix}2p&-p&-p\\-d&d&0\\-d&0&d\end{pmatrix},
+\]
+with eigenvalues $0,d,1+p$. If an exterior neighbor blocks a site, the conditional nonzero gap is one, or the space is one-dimensional. Hence in every exterior condition
+\[
+ I-E_{\{i,i+1\}}\ \le\ d^{-1}(\mathcal L_i+\mathcal L_{i+1})
+\]
+as an $L^2(\pi)$ quadratic-form inequality. The same bound applies to singleton blocks. Summing, using the two-fold incidence of every site, yields
+$\mathcal B\le2d^{-1}\mathcal L$. For every mean-zero function $f$,
+\[
+ \langle f,\mathcal Lf\rangle_\pi
+ \ge\frac d2\langle f,\mathcal Bf\rangle_\pi
+ \ge d^2\norm f_\pi^2.
+\]
+This is \eqref{eq:hardcore-gap}.
+\end{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:dimer}]
+Apply Lemma~\ref{lem:hardcore} to every nontrivial interval factor. The positive spectrum of a tensor sum is bounded below by the minimum factor gap, and direct sums preserve the common lower bound. Thus every positive eigenvalue of the full quantum chain is at least $d^2=b^4$. At $a=0$ or $b=0$ all local projectors are diagonal and the smallest positive energy is one.
+\end{proof}
+In particular $a=b=1/\sqrt2$ gives the first inequality in \eqref{eq:mainbounds}. Section~\ref{sec:certificate} supplies an independent, weaker $1/10$ bound at this point using only a rational four-site calculation. Thus the qualitative local-isospectrality separation does not depend on the sharper heat-bath proof.
+
+\section{A continuous path with fixed local spectral data}\label{sec:isospectral}
+For $0\le\theta\le\pi/2$, define
+\begin{equation}\label{eq:isopath}
+ \psi_\theta=\frac{\cos\theta\ket{00}+\sin\theta\ket{01}-\ket{12}}{\sqrt2}.
+\end{equation}
+Its coefficient matrix and its square are
+\[
+ M_\theta=\frac1{\sqrt2}
+ \begin{pmatrix}c&s&0\\0&0&-1\\0&0&0\end{pmatrix},\qquad
+ M_\theta^2=\frac12
+ \begin{pmatrix}c^2&cs&-s\\0&0&0\\0&0&0\end{pmatrix},
+ \qquad c=\cos\theta,\ s=\sin\theta.
+\]
+The nonzero rows of $M_\theta$ are orthogonal with squared norm $1/2$, so the Schmidt probabilities are always $(1/2,1/2,0)$. The only nonzero singular value of $M_\theta^2$ is $1/2$, because $c^4+c^2s^2+s^2=1$.
+
+To obtain the whole three-site spectrum rather than only its gap, use the isometries $V,W$ from Lemma~\ref{lem:overlap}. The nonzero eigenvalues of $VV^*+WW^*$ equal those of
+\[
+ \begin{pmatrix}I&V^*W\\W^*V&I\end{pmatrix}.
+\]
+They are $1\pm s_j(V^*W)$. Since these singular values are $1/2,0,0$, all six eigenvalues are positive and the remaining $27-6$ eigenvalues vanish. This proves \eqref{eq:h3spec} all along the path. The two-site statement is automatic for any rank-one projector. The endpoints are exactly \eqref{eq:pair}; combining the previous sections proves Theorem~\ref{thm:main}.
+
+We have not classified the whole path as a function of $\theta$. In particular this argument does not locate a transition point or claim that every $\theta<\pi/2$ is gapped. The neighborhood theorem proves a nonempty gapped initial portion, while the far endpoint is gapless.
+
+\section{A rational four-site certificate and perturbation stability}\label{sec:certificate}
+\subsection{An open-chain finite-size inequality}
+\begin{lemma}[Clipped-window criterion]\label{lem:windows}
+Fix $m\ge3$ and write $\delta_m=\min_{2\le k\le m}\gamma_k(P)$. For $N\ge m$,
+\begin{equation}\label{eq:finite-size}
+ \gamma_N(P)\ge\frac{(m-1)\delta_m-1}{m-2}
+\end{equation}
+whenever the right-hand side is positive.
+\end{lemma}
+\begin{proof}
+Write $p_i=P_{i,i+1}$ for $1\le i\le N-1$, extending $p_i=0$ outside this range. For each integer starting point $t$ whose window meets the chain, set
+$B_t=\sum_{i=t}^{t+m-2}p_i$. This includes clipped windows at both ends, so
+$\sum_tB_t=(m-1)H_N$. Every nonzero window is a shorter open-chain Hamiltonian on between two and $m$ sites; therefore
+\[
+ \mathcal A:=\sum_tB_t^2\ge(m-1)\delta_m H_N.
+\]
+Expanding exactly gives
+\[
+ \mathcal A=(m-1)H_N+
+ \sum_{\substack{i<j\\j-i\le m-2}}(m-1-j+i)\{p_i,p_j\}.
+\]
+The coefficient of each adjacent anticommutator is $m-2$. Every other anticommutator is nonnegative, since its projectors have disjoint support. All its coefficients are at most $m-2$. Hence
+$\mathcal A\le(m-2)H_N^2+H_N$.
+Combining these inequalities and using the spectral theorem proves the result. The shorter chains $N<m$ are handled by their individual gaps, not by assuming periodic boundaries.
+\end{proof}
+
+\subsection{The exact five-state calculation}
+For $P=\Pd$, the computational-basis components under $00\leftrightarrow12$ on four sites have sizes and multiplicities
+\[
+ 1^{(36)},\quad2^{(14)},\quad3^{(4)},\quad5^{(1)}.
+\]
+The singleton blocks vanish; the two-state blocks have spectrum $0,1$; the three-state blocks have spectrum $0,1/2,3/2$. The only remaining block, in the order
+$0000,0120,1200,1212,0012$, is
+\begin{equation}\label{eq:K}
+ K=\frac12\begin{pmatrix}
+ 3&-1&-1&0&-1\\-1&1&0&0&0\\-1&0&2&-1&0\\
+ 0&0&-1&2&-1\\-1&0&0&-1&2
+ \end{pmatrix}.
+\end{equation}
+Let $B=K^2-\tfrac25K$ and let $C$ be the leading four-by-four principal submatrix of $B$. The exact identity
+\begin{equation}\label{eq:LDL}
+ C=LDL^T,\qquad
+ L=\begin{pmatrix}
+ 1&0&0&0\\-1/3&1&0&0\\-7/16&-3&1&0\\
+ 5/24&5&-26/109&1
+ \end{pmatrix},\qquad
+ D=\diag\left(\frac{12}5,\frac1{30},\frac{109}{320},\frac{78}{545}\right)
+\end{equation}
+has strictly positive diagonal pivots. Since $B$ has zero row sums,
+$B=TCT^T$ for $T=[I_4;-\mathbf1^T]$, and hence $B\ge0$. This proves that the nonzero spectrum of $K$ is at least $2/5$. The finite block classification is directly checkable by the listed move rule; the verifier also constructs the full $81\times81$ matrix independently by tensor products and checks all component boundaries.
+
+We have consequently established the exact bounds
+\begin{equation}\label{eq:localbounds}
+ \gamma_2=1,\qquad\gamma_3=1/2,\qquad\gamma_4\ge2/5.
+\end{equation}
+As a cross-check, the nontrivial block's characteristic polynomial is
+\[
+ \det(xI-K)=\frac14x(x-1)(4x^3-16x^2+18x-5).
+\]
+Its least positive root is approximately $0.4149567567$; this decimal is not used in the proof. Lemma~\ref{lem:windows}, with $m=4$, gives a uniform gap at least $1/10$.
+
+\subsection{Why degeneracy cannot invalidate the perturbation bound}
+A gap bound at a highly degenerate frustration-free point cannot in general be perturbed merely by applying Weyl's inequality: new small positive eigenvalues might emerge from its kernel. Here local rank maxima prevent that failure.
+
+For every rank-one qutrit projector $Q$,
+\begin{equation}\label{eq:ranks}
+ \rank H_2(Q)\le1,\qquad \rank H_3(Q)\le6,\qquad
+ \rank H_4(Q)\le26.
+\end{equation}
+The first two inequalities follow from the individual range dimensions. On four sites each of the three bond-projector ranges has dimension nine, and the first and third share the one-dimensional range of $Q_{12}Q_{34}$, namely the product of the forbidden vector on sites $12$ and $34$. Thus their total span has dimension at most $9+9+9-1=26$. The dimer blocks attain all three maxima: their kernel dimensions are $8,21,55$.
+
+For $\epsilon=\norm{Q-\Pd}$,
+\[
+ \norm{H_k(Q)-H_k(\Pd)}\le(k-1)\epsilon.
+\]
+Weyl's inequality keeps all the existing positive eigenvalues positive at the stated small radii. The universal upper bounds \eqref{eq:ranks} prohibit any additional positive eigenvalues. Thus the kernel dimensions stay fixed for $k\le4$, and
+\begin{equation}\label{eq:pertlocal}
+ \gamma_2(Q)=1,\qquad
+ \gamma_3(Q)\ge\frac12-2\epsilon,\qquad
+ \gamma_4(Q)\ge\frac25-3\epsilon.
+\end{equation}
+For $\epsilon<1/45$, the last lower bound is the smallest. Substitution into \eqref{eq:finite-size} proves \eqref{eq:ball}; the shorter chains satisfy the same global bound directly from \eqref{eq:pertlocal}.
+
+For \eqref{eq:star}, the unnormalized coefficient matrix is
+\[
+ C_* =\begin{pmatrix}101&0&0\\0&0&-100\\0&1&0\end{pmatrix},
+ \qquad \det C_*=10100\ne0.
+\]
+The exact squared distance of rank-one projectors is
+\[
+ \norm{\ket{\psi_*}\bra{\psi_*}-\Pd}^2
+ =1-|\langle\psi_{\mathrm d},\psi_*\rangle|^2
+ =\frac1{13468}<\frac1{90^2}.
+\]
+On the other hand,
+\[
+ \norm{\overline M_*M_*}=\frac{10201}{20202}>\frac12,
+ \qquad \gamma_3(\ket{\psi_*}\bra{\psi_*})=\frac{10001}{20202}<\frac12.
+\]
+The three-site overlap test therefore gives no positive thermodynamic lower bound, while our four-site certificate proves $\inf_N\gamma_N\ge1/20$. This completes Theorem~\ref{thm:ball}.
+
+\section{Rank two: conserved order and exponential bottlenecks}\label{sec:ranktwo}
+\subsection{Exact one-vacancy reduction}
+In \eqref{eq:ranktwo}, $0$ is a vacancy and $1,2$ are particles which never exchange with one another. The order of the nonzero symbols is conserved. Fix any word $\sigma=\sigma_1\cdots\sigma_m$ over $\{1,2\}$ and take $N=m+1$. Its one-vacancy sector has the orthonormal basis
+\[
+ e_j=\ket{\sigma_1\cdots\sigma_j\,0\,\sigma_{j+1}\cdots\sigma_m},
+ \qquad0\le j\le m.
+\]
+It is a reducing subspace, and the restricted Hamiltonian is $D^*D$, with row $i$ of $D$ equal to
+\begin{equation}\label{eq:vacancyD}
+ \frac{-q_{\sigma_i}e_{i-1}^T+e_i^T}{\sqrt{1+q_{\sigma_i}^2}},
+ \qquad q_1=a,\quad q_2=b.
+\end{equation}
+The kernel in this sector is exactly one-dimensional, spanned by the strictly positive vector
+\begin{equation}\label{eq:g}
+ g_0=1,\qquad g_j=\prod_{i=1}^j q_{\sigma_i}.
+\end{equation}
+This identifies the ground-state component explicitly. A trial vector in this sector orthogonal to $g$ is therefore orthogonal to the \emph{entire} ground space of the full chain, not just to a selected product ground state.
+
+\subsection{Opposing biases produce a two-well trial state}
+Assume $0<a<1<b$ and let $A=-\log a$, $B=\log b$. For large $m$ choose
+\[
+ k=\left\lceil\frac{mB}{A+B}\right\rceil,\qquad
+ \sigma=1^k2^{m-k},
+\]
+with $1\le k\le m-1$. Then $g_j=a^j$ up to $j=k$, and
+$g_j=a^k b^{j-k}$ afterwards. In particular $g_0=1$, $a/b\le g_m\le1$, and $g_k=a^k$ is exponentially small. The inhomogeneous effective potential comes from a conserved particle order; the local quantum Hamiltonian itself remains translation invariant.
+
+Put
+\[
+ W_L=\sum_{j=0}^{k-1}g_j^2,\qquad W_R=\sum_{j=k}^{m}g_j^2,
+ \qquad
+ f_j=\begin{cases}W_Rg_j,&j<k,\\-W_Lg_j,&j\ge k.\end{cases}
+\]
+Then $\langle f,g\rangle=0$. Every row of $Df$ vanishes except the row crossing the cut. Exact cancellation gives
+\begin{equation}\label{eq:rayleigh}
+ \frac{\langle f,H_N f\rangle}{\langle f,f\rangle}
+ =\frac{a^{2k}}{1+a^2}\left(\frac1{W_L}+\frac1{W_R}\right).
+\end{equation}
+Since $W_L\ge1$, $W_R\ge(a/b)^2$, and
+$a^{2k}\le\exp[-2ABm/(A+B)]$, the variational principle proves \eqref{eq:ranktwo-exp}. Exchanging the species proves the same conclusion in the other opposing-bias quadrant.
+
+For $a=1/2$, $b=2$, $m=2L$, take $k=L$. Both endpoints of $g$ equal one, so $W_L,W_R\ge1$. Equation~\eqref{eq:rayleigh} gives \eqref{eq:rational-exp} directly. The verifier checks the exact rational trial norm, orthogonality, energy, and bound for $1\le L\le50$; the argument above proves the formula for every $L$.
+
+\subsection{Individually gapped constituents}
+For the Hamiltonian with only $\ket{\phi_1}\bra{\phi_1}$, every occurrence of symbol $2$ is a fixed spectator. Fixing its positions splits the chain into open qubit segments on $\{0,1\}$. Each segment is the $u=v$ case of Theorem~\ref{thm:marker}, with gap
+\[
+ 1-\frac{2a}{1+a^2}\cos(\pi/\ell)
+\]
+for segment length $\ell\ge2$. The active sector with no spectators attains the full-chain gap, and its infimum is $1-2a/(1+a^2)$. The same reasoning applies to the second constituent. This proves the remaining statements of Theorem~\ref{thm:ranktwo-main}. It also shows why adding positive, individually gapped frustration-free summands is not enough: their common ground space can have very small principal-angle excitations.
+
+\subsection{A complementary certified gapped region}
+For completeness the same rank-two family admits an elementary gapped region. Write
+$q_- =\min(a,b)$, $q_+=\max(a,b)$. A direct six-dimensional overlap calculation gives
+\begin{equation}\label{eq:two-overlap}
+ c(a,b)=\norm{P(a,b)_{12}P(a,b)_{23}}
+       =\frac{q_+}{\sqrt{(1+q_-^2)(1+q_+^2)}}.
+\end{equation}
+Indeed the squared singular values of the overlap of its two range isometries are
+\[
+ \frac{a^2}{(1+a^2)^2}\ (\text{twice}),\quad
+ \frac{b^2}{(1+b^2)^2}\ (\text{twice}),\quad
+ \frac{a^2}{(1+a^2)(1+b^2)},\quad
+ \frac{b^2}{(1+a^2)(1+b^2)}.
+\]
+The largest is the square of \eqref{eq:two-overlap}. Therefore
+\begin{equation}\label{eq:rank2region}
+ 4q_+^2<(1+q_-^2)(1+q_+^2)
+ \quad\Longrightarrow\quad
+ \inf_N\gamma_N(P(a,b))\ge1-2c(a,b)>0.
+\end{equation}
+For equal biases $a=b=q$, the lower bound of Lemma~\ref{lem:overlap} and the one-species upper bound coincide, yielding the exact formula
+\[
+ \gamma_N(P(q,q))=1-\frac{2q}{1+q^2}\cos(\pi/N).
+\]
+If either bias equals one, a one-species sector instead gives
+$\gamma_N\le1-\cos(\pi/N)$, so those lines are gapless. We do \emph{not} classify the remaining same-direction parameter regions outside \eqref{eq:rank2region}.
+
+\begin{remark}[Not the full PVBS model]
+The hopping-only projector \eqref{eq:ranktwo} lacks both same-species exclusion penalties and unlike-species interchange terms present in the two-species Product Vacua and Boundary States models. The PVBS conclusion that adding a species does not introduce a new gapless phase \cite{Bishop} therefore does not apply to it. Our exponentially small gaps do not contradict that result.
+\end{remark}
+
+\section{Verification, limits, and release claims}
+\subsection{Exact versus numerical evidence}
+The companion code separates exact finite identities from numerical diagnostics. The exact verifier uses SymPy and rational arithmetic. Its 27 check groups cover the projectors; the full two-site and three-site characteristic polynomials; the continuous-path identities; all dimer components through four sites; the positive rational factorization \eqref{eq:LDL}; the local rank maxima; the full-Schmidt-rank example and its radius; the two-site heat-bath identities; 50 rank-two trial-state sizes; and the symbolic rank-two overlap calculation.
+
+\texttt{check\_numerics.py} independently builds full Hamiltonians by tensor products and uses Hermitian diagonalization. The bundled run contains 35 cases, seven models at $N=2,\ldots,6$, including a complex nonorthogonal marker example, a biased dimer, the full-Schmidt-rank example, and both rank-two bias choices. These floating-point results are regression checks only. For orientation, Table~\ref{tab:numerics} shows a small subset; neither a numerical threshold for zero nor a fitted exponent is used in any theorem.
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}rrrr@{}}\toprule
+$N$ & Marker gap & Dimer gap & Rank-two opposing gap\\\midrule
+3&0.5000000000&0.5000000000&0.2000000000\\
+4&0.2928932188&0.4149567567&0.1055728090\\
+5&0.1909830056&0.3765101981&0.0343145751\\
+6&0.1339745962&0.3535563605&0.0202041029\\\bottomrule
+\end{tabular}
+\caption{Floating-point diagnostics, not proof data. The first two columns use the balanced rank-one models; the last uses \eqref{eq:rational-two}.}\label{tab:numerics}
+\end{table}
+
+A separate standard-library enumeration checks the frozen-symbol sector decomposition on all 9,840 computational words at lengths one through eight, including connectivity and the product of interval tiling counts. This remains a finite diagnostic.
+
+The certificate verifier is not a formal proof assistant, and the heat-bath coupling and general reducing-sector arguments remain ordinary analytic proofs. The numerical implementation is separate from the symbolic component construction, but all work belongs to one AI-assisted development process; it is not an independent external review.
+
+\subsection{What has and has not been established}
+The release-safe conclusion is a partial solution of the deterministic qutrit problem: explicit rank-one gapped and gapless families, a certified open gapped region containing full-Schmidt-rank interactions, an obstruction to decisions based only on two- and three-site spectral data, and an open opposing-bias rank-two family with exponentially closing gaps. The analytic dimer theorem gives a complete gapped classification of its own positive-weight family, and the marker theorem gives a complete gapped/gapless classification of its own family.
+
+No claim is made about arbitrary full-Schmidt-rank vectors, all rank-two projectors, all points on \eqref{eq:isopath}, the entire same-direction rank-two quadrant, or periodic or infinite-volume GNS spectral gaps. These latter notions can differ from the open-chain definition fixed in \eqref{eq:HN}. The result does not show the impossibility of longer finite-size criteria, and it does not improve the general SDP hierarchy. Historical priority and publication-level significance should be assessed by subject specialists against the explicit statements, rather than inferred from the age of the original question.
+
+\begin{thebibliography}{9}
+\bibitem{BG}
+Bravyi, S., \& Gosset, D. (2015).
+Gapped and gapless phases of frustration-free spin-$1/2$ chains.
+\emph{Journal of Mathematical Physics, 56}, 061902.
+\url{https://arxiv.org/abs/1503.04035}.
+
+\bibitem{Lemm}
+Lemm, M. (2019).
+Gaplessness is not generic for translation-invariant spin chains.
+\emph{Physical Review B, 100}, 035113.
+\url{https://doi.org/10.1103/PhysRevB.100.035113}.
+\url{https://arxiv.org/abs/1903.00108}.
+
+\bibitem{HJL}
+Hunter-Jones, N., \& Lemm, M. (2025).
+\emph{Two classes of quantum spin systems that are gapped on any bounded-degree graph} [Preprint].
+\url{https://arxiv.org/abs/2509.22438}.
+
+\bibitem{Rai}
+Rai, K. S., Kull, I., Emonts, P., Tura, J., Schuch, N., \& Baccari, F. (2026).
+A hierarchy of spectral gap certificates for frustration-free spin systems.
+\emph{Quantum, 10}, 2065.
+\url{https://doi.org/10.22331/q-2026-04-13-2065}.
+
+\bibitem{Bishop}
+Bishop, M. R. (2017).
+\emph{Spectral gaps for the Two-Species Product Vacua and Boundary States models on the $d$-dimensional lattice} [Preprint version consulted].
+\url{https://arxiv.org/abs/1705.04755}.
+\end{thebibliography}
+\end{document}

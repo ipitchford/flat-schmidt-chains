@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "archives": [
+    {
+      "archive": "evidence/baseline_v0_1",
+      "entries": 19,
+      "status": "PASS"
+    },
+    {
+      "archive": "review/supplied_referee_checks",
+      "entries": 17,
+      "status": "PASS"
+    }
+  ]
+}

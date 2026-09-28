@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "programmes": [
+    {
+      "programme": "check_numerics.py",
+      "source_sha256": "ab5a0bdccf0f9ec75536ac0ff5a9e00653545df8a8019b838617087831bcd9e7",
+      "returncode": 0,
+      "PYTHONHASHSEED": "0",
+      "elapsed_seconds": 2.006206582998857
+    },
+    {
+      "programme": "check_sector_structure.py",
+      "source_sha256": "cf5d21547b0b6f0b83d7ed2c1e09ad4b816b5b9f5cba4f83b5391525b3a1c105",
+      "returncode": 0,
+      "PYTHONHASHSEED": "0",
+      "elapsed_seconds": 0.11909037500299746
+    },
+    {
+      "programme": "verify_exact.py",
+      "source_sha256": "83fbd1cb13fd6f8631ad601ddbd835f04f4834a0e17163caf13450da2df1b929",
+      "returncode": 0,
+      "PYTHONHASHSEED": "0",
+      "elapsed_seconds": 12.79634033399634
+    },
+    {
+      "programme": "check_qubit_comparison.py",
+      "source_sha256": "29cd96f88d7819566ebf9281b5ed6d8b1d9e6e295ba562a819e3cedf0a156adc",
+      "returncode": 0,
+      "PYTHONHASHSEED": "0",
+      "elapsed_seconds": 1.3956959999995888
+    },
+    {
+      "programme": "independent_checks.py",
+      "source_sha256": "3e377b2ad28731be0a99c1eac214f72ca74eb18086d488fd7044c5cb2e729448",
+      "returncode": 0,
+      "PYTHONHASHSEED": "0",
+      "elapsed_seconds": 0.8387403329979861
+    }
+  ]
+}

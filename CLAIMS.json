@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0.1-candidate",
+  "status": "unrefereed-candidate",
+  "canonicalStatement": "For every finite local dimension d >= 2, a homogeneous open nearest-neighbour chain H_N=sum_i |psi><psi|_(i,i+1), N >= 2, with a normalised forbidden vector of Schmidt probabilities (1/2,1/2,0,...), is gapless precisely when psi=(u tensor w - w tensor v)/sqrt(2) up to phase, with unit u,v,w and w perpendicular to u,v. Every such gapless chain has gamma_N=1-cos(pi/N). All other interactions in this class are uniformly gapped. Local projector rank is ONE; forbidden-vector Schmidt rank is TWO.",
+  "proofLocations": [
+    "thm:classification",
+    "thm:marker",
+    "lem:quantitative",
+    "lem:saturation",
+    "thm:fibre",
+    "lem:gram",
+    "app:basis",
+    "prop:degeneracy"
+  ],
+  "evidence": "Finite producer replay; written universal arguments remain unformalised.",
+  "independentReproduction": "not-established",
+  "externalPeerReview": "not-authenticated",
+  "novelty": "bounded-source-search-only",
+  "source": "paper/flat_schmidt_chains.tex",
+  "index": "AI_INDEX.md"
+}

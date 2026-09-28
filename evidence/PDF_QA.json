@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "date": "2026-09-28",
+  "pages": 19,
+  "pdfSha256": "d2fba0b1eec233748a362ed1469d7d45ead17463b6693cbb6005d2ee2cac8b5e",
+  "compilation": "Final source compiled with native compiler; PDF exported with pdfLaTeX twice.",
+  "inspection": "All 19 pages visually inspected in four contact sheets; theorem/proof structure, complete Gram appendix, references, Anonymous and DOI checked.",
+  "rawTexFindings": 0,
+  "limitation": "Producer layout QA, not proof verification."
+}

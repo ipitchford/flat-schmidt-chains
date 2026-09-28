@@ -1,0 +1,37 @@
+{
+  "title": "A spectral-gap classification for flat Schmidt-rank-two chains",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p>For homogeneous open nearest-neighbour chains with a normalised rank-one local projector whose forbidden vector has exactly two equal nonzero Schmidt probabilities, a written proof candidate classifies gappedness in every finite local dimension. Gaplessness is equivalent to a balanced-marker form and has exact finite-length gap 1−cos(π/N). All other interactions in the class have explicit uniform lower bounds. A complete qutrit short-spectrum fibre has fixed Schmidt probabilities, two- and three-site spectra and ground-space dimension at every length, yet only its endpoint is gapless. The proof distinguishes compatible propagation from an obstruction to four-site saturation.</p><p>Unrefereed candidate. Producer-side exact and numerical replay corroborates finite statements, not universal analytic proofs. Supplied referee implementation and review are not authenticated unaffiliated reproduction or peer review. No exhaustive priority, experimental or impact claim.</p><p>Version 1.0.1 repairs the symbolic classifier domain and adds precise antecedent locators and a named full Gram-decomposition lemma with explicit basis appendix. Original prose/data CC0-1.0; original code MIT; third-party exceptions in LICENSES.md.</p>",
+  "creators": [
+    {
+      "name": "Anonymous"
+    }
+  ],
+  "version": "1.0.1-candidate",
+  "publication_date": "2026-09-28",
+  "access_right": "open",
+  "license": "cc-zero",
+  "keywords": [
+    "spectral gap",
+    "quantum spin chains",
+    "Schmidt rank",
+    "frustration free",
+    "qutrit",
+    "isospectral fibre"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/flat-schmidt-chains",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "references": [
+    "Bravyi and Gosset (2015), Gapped and gapless phases of frustration-free spin-1/2 chains. Theorem 1 supplies the complete qubit predecessor; it does not classify distinct intersecting qutrit supports. https://arxiv.org/abs/1503.04035",
+    "Movassagh et al. (2010), Unfrustrated qudit chains and their ground states. Section II, equation (11), is the antecedent for the ground-space recurrence; the candidate proves persistence along its entire specified fibre. https://arxiv.org/abs/1001.1006",
+    "Bravyi et al. (2012), Criticality without frustration for quantum spin-1 chains. Step 1 uses the known unbiased hopping gap and separates hopping from pair creation. https://arxiv.org/abs/1203.5801",
+    "Lemm (2019), Gaplessness is not generic for translation-invariant spin chains. Established adjacent-overlap and finite-size methods precede the saturation analysis here. https://arxiv.org/abs/1903.00108",
+    "Rai et al. (2026), A hierarchy of spectral gap certificates for frustration-free spin systems. A broader certificate framework, not a classification of this specified support geometry. https://doi.org/10.22331/q-2026-04-13-2065"
+  ]
+}

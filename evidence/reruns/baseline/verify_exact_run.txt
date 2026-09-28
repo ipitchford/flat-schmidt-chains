@@ -1,0 +1,28 @@
+PASS dimer projector
+PASS dimer H2 spectrum
+PASS dimer H3 spectrum
+PASS marker projector
+PASS marker H2 spectrum
+PASS marker H3 spectrum
+PASS isospectral-path contraction identity
+PASS isospectral-path Schmidt identity
+PASS dimer N=2 component counts
+PASS dimer N=2 all blocks reducing with stated spectra
+PASS dimer N=3 component counts
+PASS dimer N=3 all blocks reducing with stated spectra
+PASS dimer N=4 component counts
+PASS dimer N=4 all blocks reducing with stated spectra
+PASS five-state block from independent Kronecker Hamiltonian
+PASS exact positive LDL certificate
+PASS five-state PSD certificate extension
+PASS local rank maxima
+PASS full-Schmidt-rank determinant
+PASS exact projector-distance squared
+PASS inside certified 1/90 ball
+PASS fails three-site overlap test
+PASS uniform-gap radius arithmetic
+PASS hard-core two-site generator spectrum
+PASS block boundary coupling cost
+PASS rank-two exact double-well trials
+PASS rank-two overlap singular values
+ALL 27 EXACT CHECK GROUPS PASSED

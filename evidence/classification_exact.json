@@ -1,0 +1,228 @@
+{
+  "status": "PASS",
+  "check_groups": 43,
+  "exact_PSD_certificates": 7,
+  "elapsed_seconds": 3.9226858750043903,
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "scope": "Exact finite regression certificates; general theorems remain analytic proofs, not proof-assistant verified.",
+  "checks": [
+    {
+      "name": "fibre core characteristic polynomial",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "fibre core leading minors",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "quantitative constant 63+24sqrt5 < 128",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "clipped two-bond minimum",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "all chosen local constants below clipping threshold",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "clipped-window combinatorics N=2..30",
+      "status": "PASS",
+      "details": {
+        "sizes": 29
+      }
+    },
+    {
+      "name": "unitarity and flat Schmidt 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "complex saturation contractions 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unit extremal pair mode 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "four-site positive-decomposition identity 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "range rank 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 1",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "general flat four-site exact positivity 0",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unitarity and flat Schmidt 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "complex saturation contractions 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unit extremal pair mode 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "four-site positive-decomposition identity 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "range rank 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 2",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "general flat four-site exact positivity 3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unitarity and flat Schmidt 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "complex saturation contractions 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unit extremal pair mode 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "four-site positive-decomposition identity 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "range rank 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 3",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "general flat four-site exact positivity 5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unitarity and flat Schmidt 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "complex saturation contractions 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "unit extremal pair mode 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "four-site positive-decomposition identity 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "range rank 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 4",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "general flat four-site exact positivity 12/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "full-matrix sharp fibre certificate c=1",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 6",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "full-matrix sharp fibre certificate c=3/5",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "LDL reconstruction 7",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "full-matrix sharp fibre certificate c=5/13",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "core basis orthonormal",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "even core equals displayed S",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "five-dimensional core reducing",
+      "status": "PASS",
+      "details": null
+    }
+  ]
+}

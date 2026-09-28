@@ -1,0 +1,8 @@
+PASS {'N': 1, 'words': 3, 'components': 3, 'status': 'PASS'}
+PASS {'N': 2, 'words': 9, 'components': 8, 'status': 'PASS'}
+PASS {'N': 3, 'words': 27, 'components': 21, 'status': 'PASS'}
+PASS {'N': 4, 'words': 81, 'components': 55, 'status': 'PASS'}
+PASS {'N': 5, 'words': 243, 'components': 144, 'status': 'PASS'}
+PASS {'N': 6, 'words': 729, 'components': 377, 'status': 'PASS'}
+PASS {'N': 7, 'words': 2187, 'components': 987, 'status': 'PASS'}
+PASS {'N': 8, 'words': 6561, 'components': 2584, 'status': 'PASS'}

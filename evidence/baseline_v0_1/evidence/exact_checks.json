@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "check_count": 27,
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "scope": "Exact finite identities and certificates; analytic theorems are proved in paper, not formally verified.",
+  "checks": [
+    {
+      "name": "dimer projector",
+      "status": "PASS"
+    },
+    {
+      "name": "dimer H2 spectrum",
+      "status": "PASS"
+    },
+    {
+      "name": "dimer H3 spectrum",
+      "status": "PASS"
+    },
+    {
+      "name": "marker projector",
+      "status": "PASS"
+    },
+    {
+      "name": "marker H2 spectrum",
+      "status": "PASS"
+    },
+    {
+      "name": "marker H3 spectrum",
+      "status": "PASS"
+    },
+    {
+      "name": "isospectral-path contraction identity",
+      "status": "PASS",
+      "detail": "M is unnormalized: (M^2)(M^2)^T has its only nonzero eigenvalue 1"
+    },
+    {
+      "name": "isospectral-path Schmidt identity",
+      "status": "PASS"
+    },
+    {
+      "name": "dimer N=2 component counts",
+      "status": "PASS",
+      "detail": {
+        "1": 7,
+        "2": 1
+      }
+    },
+    {
+      "name": "dimer N=2 all blocks reducing with stated spectra",
+      "status": "PASS"
+    },
+    {
+      "name": "dimer N=3 component counts",
+      "status": "PASS",
+      "detail": {
+        "1": 16,
+        "2": 4,
+        "3": 1
+      }
+    },
+    {
+      "name": "dimer N=3 all blocks reducing with stated spectra",
+      "status": "PASS"
+    },
+    {
+      "name": "dimer N=4 component counts",
+      "status": "PASS",
+      "detail": {
+        "1": 36,
+        "2": 14,
+        "3": 4,
+        "5": 1
+      }
+    },
+    {
+      "name": "dimer N=4 all blocks reducing with stated spectra",
+      "status": "PASS"
+    },
+    {
+      "name": "five-state block from independent Kronecker Hamiltonian",
+      "status": "PASS"
+    },
+    {
+      "name": "exact positive LDL certificate",
+      "status": "PASS"
+    },
+    {
+      "name": "five-state PSD certificate extension",
+      "status": "PASS"
+    },
+    {
+      "name": "local rank maxima",
+      "status": "PASS"
+    },
+    {
+      "name": "full-Schmidt-rank determinant",
+      "status": "PASS"
+    },
+    {
+      "name": "exact projector-distance squared",
+      "status": "PASS"
+    },
+    {
+      "name": "inside certified 1/90 ball",
+      "status": "PASS"
+    },
+    {
+      "name": "fails three-site overlap test",
+      "status": "PASS"
+    },
+    {
+      "name": "uniform-gap radius arithmetic",
+      "status": "PASS"
+    },
+    {
+      "name": "hard-core two-site generator spectrum",
+      "status": "PASS"
+    },
+    {
+      "name": "block boundary coupling cost",
+      "status": "PASS"
+    },
+    {
+      "name": "rank-two exact double-well trials",
+      "status": "PASS",
+      "detail": {
+        "sizes": 50,
+        "N_min": 3,
+        "N_max": 101
+      }
+    },
+    {
+      "name": "rank-two overlap singular values",
+      "status": "PASS"
+    }
+  ]
+}

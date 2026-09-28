@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "cases": 35,
+  "max_n": 6,
+  "zero_threshold": 1e-09,
+  "bound_tolerance": 1e-08,
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "scope": "Floating-point sanity checks only; no proof is inferred from finite-size scaling."
+}

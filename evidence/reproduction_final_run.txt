@@ -1,0 +1,51 @@
+PASS fibre core characteristic polynomial
+PASS fibre core leading minors
+PASS quantitative constant 63+24sqrt5 < 128
+PASS clipped two-bond minimum
+PASS all chosen local constants below clipping threshold
+PASS clipped-window combinatorics N=2..30
+PASS unitarity and flat Schmidt 0
+PASS complex saturation contractions 0
+PASS unit extremal pair mode 0
+PASS four-site positive-decomposition identity 0
+PASS range rank 0
+PASS LDL reconstruction 1
+PASS general flat four-site exact positivity 0
+PASS unitarity and flat Schmidt 3/5
+PASS complex saturation contractions 3/5
+PASS unit extremal pair mode 3/5
+PASS four-site positive-decomposition identity 3/5
+PASS range rank 3/5
+PASS LDL reconstruction 2
+PASS general flat four-site exact positivity 3/5
+PASS unitarity and flat Schmidt 5/13
+PASS complex saturation contractions 5/13
+PASS unit extremal pair mode 5/13
+PASS four-site positive-decomposition identity 5/13
+PASS range rank 5/13
+PASS LDL reconstruction 3
+PASS general flat four-site exact positivity 5/13
+PASS unitarity and flat Schmidt 12/13
+PASS complex saturation contractions 12/13
+PASS unit extremal pair mode 12/13
+PASS four-site positive-decomposition identity 12/13
+PASS range rank 12/13
+PASS LDL reconstruction 4
+PASS general flat four-site exact positivity 12/13
+PASS LDL reconstruction 5
+PASS full-matrix sharp fibre certificate c=1
+PASS LDL reconstruction 6
+PASS full-matrix sharp fibre certificate c=3/5
+PASS LDL reconstruction 7
+PASS full-matrix sharp fibre certificate c=5/13
+PASS core basis orthonormal
+PASS even core equals displayed S
+PASS five-dimensional core reducing
+ALL 43 EXACT CHECK GROUPS PASSED
+PASS: 11 exact classifier cases, 3 input rejections, normal words N=0..8
+PASS: 146 full Hamiltonians, 24 complex four-site certificates
+PASS check_numerics.py
+PASS check_sector_structure.py
+PASS verify_exact.py
+PASS check_qubit_comparison.py
+PASS independent_checks.py

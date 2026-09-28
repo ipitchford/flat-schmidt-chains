@@ -1,0 +1,6 @@
+# Python 3.13.5 was used for the recorded checks.
+# Only SymPy is needed for verify_exact.py; sector checks use the standard library.
+sympy==1.14.0
+# Optional floating-point diagnostics:
+numpy==2.3.5
+scipy==1.17.0

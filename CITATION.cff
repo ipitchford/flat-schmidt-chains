@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the versioned candidate; finite replay is not formal or independent verification."
+title: "A spectral-gap classification for flat Schmidt-rank-two chains"
+type: article
+authors:
+  - name: Anonymous
+version: 1.0.1-candidate
+date-released: 2026-09-28
+doi: 10.5281/zenodo.23024569
+url: https://github.com/ipitchford/flat-schmidt-chains
+license: CC0-1.0

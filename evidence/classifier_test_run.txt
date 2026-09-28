@@ -1,0 +1,1 @@
+PASS: 11 exact classifier cases, 3 input rejections, normal words N=0..8
